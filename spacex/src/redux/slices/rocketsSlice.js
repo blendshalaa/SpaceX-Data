@@ -1,7 +1,7 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 const rocketsSlice = createSlice({
-    name: 'rockets',
+    name: "rockets",
     initialState: [],
     reducers: {
         setRockets: (state, action) => {
@@ -11,13 +11,13 @@ const rocketsSlice = createSlice({
                 description: item.description,
                 flickr_images: item.flickr_images,
                 reserved: false,
-            }))
-
+            }));
 
             return rockets;
         },
         setReserveRocket: (state, action) => {
             const { id } = action.payload;
+            debugger;
             const tempRockets = state.map((rocket) => {
                 if (rocket.id === id) {
                     return { ...rocket, reserved: true };
@@ -25,10 +25,8 @@ const rocketsSlice = createSlice({
 
                 return rocket;
             });
-            debugger;
-            console.log("TEMP ROCKET ")
-            console.log(tempRockets)
-            return tempRockets
+
+            return tempRockets;
         },
         setCancelReservation: (state, action) => {
             const { id } = action.payload;

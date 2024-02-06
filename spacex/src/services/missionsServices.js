@@ -3,7 +3,7 @@ import axios from "axios";
 
 class missionsServices {
 
-    fetchRockets() {
+    fetchMission() {
         const url = 'https://api.spacexdata.com/v3/missions';
         return axios.get(url);
     }

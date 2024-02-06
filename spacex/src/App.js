@@ -1,11 +1,9 @@
-/* eslint-disable no-unused-vars */
-
 import Dragons from './pages/Dragons';
 import Missions from './pages/Missions';
 import MyProfile from './pages/MyProfile';
 import NotFound from './pages/NotFound';
 import Rockets from './pages/Rockets';
-import './styles/App.css';
+import './styles/app.css';
 import { createBrowserRouter } from 'react-router-dom';
 import { RouterProvider } from 'react-router-dom';
 

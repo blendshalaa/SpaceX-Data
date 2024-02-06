@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 import rocketServices from '../services/rocketServices'
-import '../styles/rockets.css'
 import React from 'react'
 import { NavLink } from 'react-router-dom';
+import '../styles/rockets.css'
 
 function Rockets() {
   const [rocketData, setRocketData] = useState([])
@@ -21,23 +21,28 @@ function Rockets() {
   }, [])
 
   return (
-    <div>
-      <NavLink to="/missions" className='btn' activeClassName='active-link'>Go to Missions</NavLink>
-      <NavLink to="/profiles" className='btn' activeClassName='active-link'>Go to Profiles</NavLink>
-      <NavLink to="/dragons" className='btn' activeClassName='active-link'>Go to Dragons</NavLink>
+    <div className="rockets-container">
+      <nav className="navigation">
+        <NavLink exact to="/rockets" className='nav-link' activeClassName='active-link'>Rockets</NavLink>
+        <NavLink exact to="/missions" className='nav-link' activeClassName='active-link'>Missions</NavLink>
+        <NavLink exact to="/dragons" className='nav-link' activeClassName='active-link'>Dragons</NavLink>
+        <NavLink exact to="/profile" className='nav-link' activeClassName='active-link'>My Profile</NavLink>
+      </nav>
 
-      <h1>Rockets</h1>
-      {rocketData.map((item) => (
-        <div key={item.rocket_id}>
-          <p>ID: {item.rocket_id}</p>
-          <h2>Rocket name: {item.rocket_name}</h2>
-          <p>Description: {item.description}</p>
-          <img src={item.flickr_images} alt={item.rocket_name} className='rocket-image' />
+      <h1 className="rockets-title">Rockets</h1>
 
-        </div>
-      ))}
-
-
+      <div className="rocket-list">
+        {rocketData.map((item) => (
+          <div key={item.rocket_id} className="rocket-item">
+            {/* <p className="rocket-id">ID: {item.rocket_id}</p> */}
+            <h2 className="rocket-name"> {item.rocket_name}</h2>
+            <div class="rocket-description-container">
+              <p class="rocket-description">Description: {item.description}</p>
+            </div>
+            <img src={item.flickr_images} alt={item.rocket_name} className='rocket-image' />
+          </div>
+        ))}
+      </div>
     </div>
   )
 }

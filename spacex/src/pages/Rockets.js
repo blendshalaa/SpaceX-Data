@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import rocketServices from '../services/rocketServices'
-import '../styles/rockets.css'
+import '../styles/Rockets.css'
 import React from 'react'
 import { NavLink } from 'react-router-dom';
 

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import missionsServices from '../services/missionsServices';
 import '../styles/missions.css';
 

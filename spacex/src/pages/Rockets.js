@@ -1,8 +1,7 @@
-import { useEffect, useState } from 'react'
-import rocketServices from '../services/rocketServices'
-import React from 'react'
+import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import '../styles/rockets.css'
+import rocketServices from '../services/rocketServices';
+import '../styles/rockets.css';
 
 function Rockets() {
   const [rocketData, setRocketData] = useState([])

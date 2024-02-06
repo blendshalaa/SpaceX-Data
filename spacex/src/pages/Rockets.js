@@ -1,16 +1,23 @@
 import { useEffect, useState } from 'react'
 import rocketServices from '../services/rocketServices'
+import { useDispatch, useSelector } from 'react-redux';
 import React from 'react'
 import { NavLink } from 'react-router-dom';
 import '../styles/rockets.css'
-
+import {
+  setCancelReservation,
+  setReserveRocket,
+  setRockets,
+} from '../redux/slices/rocketsSlice';
+import RocketCard from '../components/RocketCard';
 function Rockets() {
-  const [rocketData, setRocketData] = useState([])
+  const rockets = useSelector((state) => state.rockets);
+  const dispatch = useDispatch();
 
   const fetchRockets = async () => {
     try {
       const response = await rocketServices.fetchRockets()
-      setRocketData(response.data)
+      dispatch(setRockets(response.data));
     } catch (error) {
       console.log(error)
     }
@@ -19,6 +26,15 @@ function Rockets() {
   useEffect(() => {
     fetchRockets()
   }, [])
+
+  const onClickRocketCard = (item) => {
+    console.log("onClickRocketCard with id:" + item.id)
+    if (item.reserved) {
+      dispatch(setReserveRocket({ id: item.id }))
+    } else {
+      dispatch(setCancelReservation({ id: item.id }))
+    }
+  }
 
   return (
     <div className="rockets-container">
@@ -32,15 +48,8 @@ function Rockets() {
       <h1 className="rockets-title">Rockets</h1>
 
       <div className="rocket-list">
-        {rocketData.map((item) => (
-          <div key={item.rocket_id} className="rocket-item">
-            {/* <p className="rocket-id">ID: {item.rocket_id}</p> */}
-            <h2 className="rocket-name"> {item.rocket_name}</h2>
-            <div class="rocket-description-container">
-              <p class="rocket-description">Description: {item.description}</p>
-            </div>
-            <img src={item.flickr_images} alt={item.rocket_name} className='rocket-image' />
-          </div>
+        {rockets.map((item, index) => (
+          <RocketCard item={item} key={index} onClickButton={onClickRocketCard} />
         ))}
       </div>
     </div>

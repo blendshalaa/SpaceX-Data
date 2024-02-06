@@ -6,6 +6,7 @@ import Rockets from './pages/Rockets';
 import './styles/app.css';
 import { createBrowserRouter } from 'react-router-dom';
 import { RouterProvider } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,7 @@ function App() {
   return (
     <>
       <div>
+
         <RouterProvider router={router} />
       </div>
     </>

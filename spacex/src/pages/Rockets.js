@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import rocketServices from "../services/rocketServices";
 import React from "react";
-import "../styles/rockets.css";
+import "../styles/Rockets.css";
 
 import {
   setCancelReservation,

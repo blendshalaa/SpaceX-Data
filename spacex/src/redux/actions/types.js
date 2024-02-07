@@ -1,4 +1,4 @@
-// actionTypes.js
+
 
 export const FETCH_DRAGONS_REQUEST = 'FETCH_DRAGONS_REQUEST';
 export const FETCH_DRAGONS_SUCCESS = 'FETCH_DRAGONS_SUCCESS';

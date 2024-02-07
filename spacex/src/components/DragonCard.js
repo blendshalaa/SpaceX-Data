@@ -2,12 +2,14 @@
 import React, { useState } from 'react';
 import '../styles/Dragons.css'; // Adjust the path accordingly
 
+
+
 export default function DragonCard({ item, onClickButton }) {
   const [reserved, setReserved] = useState(item.reserved);
 
   const toggleReservation = () => {
     setReserved(!reserved);
-    onClickButton(item); // Pass the clicked item to the parent component
+    onClickButton(item); 
   };
 
   return (
@@ -18,11 +20,13 @@ export default function DragonCard({ item, onClickButton }) {
         <img src={item.flickr_images[0]} alt={item.name} className='dragon-image' />
       )}
 
-      {/* Conditional rendering based on reserved status */}
-      <div className="dragon-description-container">
-        <p className="dragon-description">{/* Include Dragon description here if available */}</p>
-      </div>
+      {item.description && (
+        <div className="dragon-description-container">
+          <p className="dragon-description">Description: {item.description}</p>
+        </div>
+      )}
 
+   
       <div className="reservation-button-container">
         {reserved && <p className="reserved-text">R E S E R V E D</p>}
         <button className="reservation-button" onClick={toggleReservation}>

@@ -1,22 +1,45 @@
+// dragonsSlice.js
 import { createSlice } from '@reduxjs/toolkit';
-
-const initialState = {
-  dragons: [],
- 
-};
 
 const dragonsSlice = createSlice({
   name: 'dragons',
-  initialState,
+  initialState: [],
   reducers: {
     setDragons: (state, action) => {
-      state.dragons = action.payload;
-    },
+      const dragons = action.payload.map((item) => ({
+        id: item.id,
+        name: item.name,
+        type: item.type,
+        flickr_images: item.flickr_images,
+        reserved: false,
+      }));
 
+      return dragons;
+    },
+    setReserveDragon: (state, action) => {
+      const { id } = action.payload;
+      const tempDragons = state.map((dragon) => {
+        if (dragon.id === id) {
+          return { ...dragon, reserved: true };
+        }
+        return dragon;
+      });
+
+      return tempDragons;
+    },
+    setCancelDragonReservation: (state, action) => {
+      const { id } = action.payload;
+      const tempDragons = state.map((dragon) => {
+        if (dragon.id === id) {
+          return { ...dragon, reserved: false };
+        }
+        return dragon;
+      });
+
+      return tempDragons;
+    },
   },
 });
 
-export const { setDragons } = dragonsSlice.actions;
-export const selectDragons = (state) => state.dragons.dragons;
-
+export const { setDragons, setReserveDragon, setCancelDragonReservation } = dragonsSlice.actions;
 export default dragonsSlice.reducer;

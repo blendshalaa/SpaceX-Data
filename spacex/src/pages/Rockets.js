@@ -39,40 +39,7 @@ function Rockets() {
 
   return (
     <div className="rockets-container">
-      <nav className="navigation">
-        <NavLink
-          exact
-          to="/rockets"
-          className="nav-link"
-          activeClassName="active-link"
-        >
-          Rockets
-        </NavLink>
-        <NavLink
-          exact
-          to="/missions"
-          className="nav-link"
-          activeClassName="active-link"
-        >
-          Missions
-        </NavLink>
-        <NavLink
-          exact
-          to="/dragons"
-          className="nav-link"
-          activeClassName="active-link"
-        >
-          Dragons
-        </NavLink>
-        <NavLink
-          exact
-          to="/profile"
-          className="nav-link"
-          activeClassName="active-link"
-        >
-          My Profile
-        </NavLink>
-      </nav>
+
 
       <h1 className="rockets-title">Rockets</h1>
 

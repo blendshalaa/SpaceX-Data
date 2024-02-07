@@ -1,0 +1,28 @@
+.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  .navbar li {
+    display: inline-block;
+  }
+  
+  .navbar li a {
+    font-size: x-large;
+    display: block;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .navbar li a:hover {
+    text-decoration: underline;
+  }
+  
+  .navbar li a.active {
+    text-decoration: underline;
+  }
+  

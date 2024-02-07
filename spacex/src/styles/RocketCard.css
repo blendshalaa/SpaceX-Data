@@ -68,7 +68,7 @@
   }
   
   .reservation-button:hover {
-    background-color: #0056b3;
+    background-color: #558fcc;
   }
   
   .reserved-text {
@@ -83,7 +83,7 @@
   
   .rocket-image {
     width: 100%;
-    height: auto;
+    height: 300px;
     border-radius: 5px;
     margin-bottom: 10px;
   }
@@ -95,7 +95,7 @@
   }
   
   .reservation-button {
-    background-color: #007bff;
+    background-color: #c99920;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -105,13 +105,19 @@
   }
   
   .reservation-button:hover {
-    background-color: #0056b3;
+    background-color: #8ba946;
   }
   
-  .reserved-text {
+  .reserved-paragraph{
+    min-height: 40px;
     font-size: 20px;
     font-weight: bold;
-    color: rgb(50, 152, 89);
+    color: rgb(79, 141, 102);
+    text-align: center;
+    
+  }
+  .reserved-text {
+
     position: absolute; 
     top: 0; 
     right: 0; 

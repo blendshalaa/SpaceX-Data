@@ -1,10 +1,11 @@
 body {
-    background: linear-gradient(45deg, #0d5a64, #160c72);
+    background: linear-gradient(45deg, #b0b6b6, #8784a5);
+    height: 100vh;
   }
   
 
   .missions-container {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
     background-color: rgba(255, 255, 255, 0.8); 
@@ -62,4 +63,6 @@ body {
     background-color: #0e1445;
     transform: scale(1.05); 
   }
+
+
   

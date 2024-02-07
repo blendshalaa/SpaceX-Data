@@ -1,0 +1,33 @@
+.my-profile {
+  width: 80%;
+  margin: 170px auto;
+  display: flex;
+  justify-content: center;
+}
+.stats {
+  width: 80%;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 10px;
+}
+
+.grid-item {
+  width: 100%;
+  padding: 30px;
+  color: rgba(0, 0, 0, 0.7);
+  text-align: center;
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+}
+h2 {
+  margin-bottom: 30px;
+}
+.item-stats li {
+  list-style: none;
+  font-size: 20px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid lightgrey;
+  padding: 5px;
+}

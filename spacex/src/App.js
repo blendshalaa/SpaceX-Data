@@ -1,44 +1,27 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar'
 import Dragons from './pages/Dragons';
 import Missions from './pages/Missions';
 import MyProfile from './pages/MyProfile';
 import NotFound from './pages/NotFound';
 import Rockets from './pages/Rockets';
 import './styles/App.css';
-import { createBrowserRouter } from 'react-router-dom';
-import { RouterProvider } from 'react-router-dom';
-import { NavLink } from 'react-router-dom';
-
-const router = createBrowserRouter([
-  {
-    path: '/dragons',
-    element: <Dragons />,
-    errorElement: <NotFound />
-  }
-  , {
-    path: '/missions',
-    element: <Missions />,
-    errorElement: <NotFound />
-  }, {
-    path: '/profiles',
-    element: <MyProfile />,
-    errorElement: <NotFound />
-  },
-  {
-    path: '/',
-    element: <Rockets />,
-    errorElement: <NotFound />
-  }
-])
-
 
 function App() {
   return (
-    <>
+    <Router>
       <div>
+        <Navbar />
 
-        <RouterProvider router={router} />
+        <Routes>
+          <Route path="/rockets" element={<Rockets />} />
+          <Route path="/dragons" element={<Dragons />} />
+          <Route path="/missions" element={<Missions />} />
+          <Route path="/profiles" element={<MyProfile />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
       </div>
-    </>
+    </Router>
   );
 }
 

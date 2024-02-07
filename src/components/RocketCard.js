@@ -7,7 +7,10 @@ export default function RocketCard({ item, onClickButton }) {
 
   return (
     <div key={item.rocket_id} className="rocket-item">
-      <h2 className="rocket-name">{item.rocket_name}</h2>
+      <div className="rocket-card-name">
+        <h2 className="rocket-name">{item.rocket_name}</h2>
+      </div>
+
       <p className="reserved-paragraph">
         {item.reserved ? "🚀 R E S E R V E D 🚀" : ""}
       </p>
@@ -21,11 +24,13 @@ export default function RocketCard({ item, onClickButton }) {
         <p className="rocket-description">{item.description}</p>
       </div>
 
-      <div className="reservation-button-container"></div>
 
       <button className="reservation-button" onClick={onClickReserved}>
         {item.reserved ? "Cancel Rocket" : "Reserve Rocket"}
       </button>
-    </div>
+
+
+
+    </div >
   );
 }

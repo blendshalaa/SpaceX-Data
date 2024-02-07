@@ -18,7 +18,7 @@
   }
   
   .rocket-description {
-    font-style: italic;
+    font-family: Montserrat, sans-serif;
   }
   .rocket-item {
     border: 1px solid #ccc;
@@ -29,16 +29,19 @@
   }
   
   .rocket-name {
-    font-size: 20px;
+    font-size: 25px;
     margin-bottom: 10px;
+    color: rgb(126, 53, 11);
   }
   
   .rocket-description-container {
+    margin-top: 10px;
     margin-bottom: 10px;
   }
   
   .rocket-description {
     font-style: italic;
+    font-size: 15px;
   }
   
 
@@ -58,7 +61,6 @@
   }
   
   .reservation-button {
-    background-color: #28b877;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -88,14 +90,11 @@
     margin-bottom: 10px;
   }
   
-  .reservation-button-container {
-    position: absolute; 
-    top: 0;
-    right: 0; 
-  }
+
   
   .reservation-button {
-    background-color: #c99920;
+    width: 100%;
+    background-color: #8c8d94;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -105,7 +104,7 @@
   }
   
   .reservation-button:hover {
-    background-color: #8ba946;
+    background-color: #944535;
   }
   
   .reserved-paragraph{

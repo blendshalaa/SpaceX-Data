@@ -20,7 +20,7 @@ const UniqueProfile = () => {
                   </div>
                 ))
               ) : (
-                <p className="unique-no-rockets">No rockets reserved!</p>
+                <p className="unique-no-rockets"> No rockets reserved!</p>
               )}
             </div>
           </div>

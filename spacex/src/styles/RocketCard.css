@@ -1,0 +1,122 @@
+.rocket-item {
+    border: 1px solid #ccc;
+    max-height: 300;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    position: relative; 
+  }
+  
+  .rocket-name {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .rocket-description-container {
+    margin-bottom: 10px;
+
+  }
+  
+  .rocket-description {
+    font-style: italic;
+  }
+  .rocket-item {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  
+  .rocket-name {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .rocket-description-container {
+    margin-bottom: 10px;
+  }
+  
+  .rocket-description {
+    font-style: italic;
+  }
+  
+
+  .rocket-image {
+    width: 100%;
+    height: 200px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .reservation-button-container {
+
+    bottom: 0;
+    right: 0;
+    margin-bottom: 20px; 
+    margin-top: 50px;
+  }
+  
+  .reservation-button {
+    background-color: #28b877;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .reservation-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .reserved-text {
+    font-size: 22px;
+    font-weight: bold;
+    color: rgb(126, 53, 11);
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px;
+  }
+  
+  .rocket-image {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .reservation-button-container {
+    position: absolute; 
+    top: 0;
+    right: 0; 
+  }
+  
+  .reservation-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .reservation-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .reserved-text {
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(50, 152, 89);
+    position: absolute; 
+    top: 0; 
+    right: 0; 
+    margin: 10px; 
+  }
+  
+
+  

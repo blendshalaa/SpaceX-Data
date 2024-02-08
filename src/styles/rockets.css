@@ -1,31 +1,13 @@
 .rockets-container {
-  padding: 20px;
+  padding: 100px;
+  margin-top: auto;
+  font-family: Montserrat, sans-serif;
 }
 
 .navigation {
   margin-bottom: 20px;
 }
 
-.nav-link {
-  display: inline-block;
-  padding: 10px 20px;
-  margin-right: 10px;
-  color: #7f92a7;
-  text-decoration: none;
-}
-
-.nav-link:hover {
-  text-decoration: underline;
-}
-
-.active-link {
-  text-decoration: underline;
-  font-weight: bold;
-}
-
-.rockets-title {
-  margin-bottom: 20px;
-}
 
 .rocket-list {
   display: grid;
@@ -51,6 +33,7 @@
   display: flex;
   align-items: center; 
   justify-content: center; 
+  font-family: Montserrat, sans-serif;
 }
 .rocket-description-container {
   height: 200px; 

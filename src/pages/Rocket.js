@@ -41,8 +41,6 @@ const RocketPage = () => {
   return (
     <div>
       <div className="rockets-container">
-        <h1 className="rockets-title">Rockets</h1>
-
         <div className="rocket-list">
           {rockets.map((item, index) => (
             <RocketCard

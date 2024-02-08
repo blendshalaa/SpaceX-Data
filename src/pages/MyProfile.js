@@ -1,9 +1,10 @@
 import { useSelector } from "react-redux";
+import "../styles/myprofile.css";
 import { useEffect } from "react";
 import { fetchMission } from "../services/missionsServices"; // Import the fetchMission function
-import "../styles/my-profile.css";
+// import "../styles/my-profile.css";
 
-const MyProfile = () => {
+const UniqueProfile = () => {
   const rockets = useSelector((state) => state.rockets);
   const missions = useSelector((state) => state.missions.missions); // Add selector for missions
   const reservedRockets = rockets.filter((rocket) => rocket.reserved);
@@ -16,18 +17,26 @@ const MyProfile = () => {
   const joinedMissions = missions.filter((mission) => mission.reserved);
 
   return (
-    <div className="my-profile">
-      <div className="stats">
-        <div className="item-stats grid-item">
-          <h2>Reserved Rockets 🚀</h2>
-          {reservedRockets.length !== 0 ? (
-            reservedRockets.map((rocket) => (
-              <li key={rocket.id}>{rocket.rocket_name}</li>
-            ))
-          ) : (
-            <p>No rockets reserved!</p>
-          )}
+    <div className="unique-profile-container">
+      <div className="unique-box">
+        <div className="unique-box-top"></div>
+        <div className="unique-box-middle">
+          <div className="unique-box-content">
+            <h2 className="unique-heading">YOUR RESERVED ROCKETS</h2>
+            <div className="unique-rocket-container">
+              {reservedRockets.length !== 0 ? (
+                reservedRockets.map((rocket) => (
+                  <div className="unique-rocket" key={rocket.id}>
+                    {rocket.rocket_name}
+                  </div>
+                ))
+              ) : (
+                <p className="unique-no-rockets"> No rockets reserved!</p>
+              )}
+            </div>
+          </div>
         </div>
+        <div className="unique-box-bottom"></div>
       </div>
       <div className="missions">
         <h2>Joined Missions 🚀</h2>
@@ -42,4 +51,4 @@ const MyProfile = () => {
   );
 };
 
-export default MyProfile;
+export default UniqueProfile;

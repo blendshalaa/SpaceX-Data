@@ -23,7 +23,6 @@ function Missions() {
 
   return (
     <div className="missions-container">
-      <h1 className="mission-title">Missions</h1>
       <table className="missions-table">
         <thead>
           <tr>

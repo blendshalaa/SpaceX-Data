@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import rocketServices from "../services/rocketServices";
-import React from "react";
 import {
   setCancelReservation,
   setReserveRocket,

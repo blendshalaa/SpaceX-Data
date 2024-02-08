@@ -1,13 +1,17 @@
-import axios from "axios";
+// dragonsServices.js
+// services/DragonsServices.js
 
-class DragonsServices {
-    fetchDragons() {
-        const url = 'https://api.spacexdata.com/v3/dragons';
-        return axios.get(url);
+// dragonsServices.js
+
+// services/dragonsService.js
+// Assuming you have a service to fetch dragons from an API
+export const fetchDragons = async () => {
+    try {
+      const response = await fetch('https://api.spacexdata.com/v3/dragons');
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      throw new Error('Failed to fetch dragons');
     }
-}
-
-
-export const fetchDragons = () => {
-    return new DragonsServices().fetchDragons();
-};
+  };
+  

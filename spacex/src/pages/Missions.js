@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import missionsServices from '../services/missionsServices';
-import '../styles/missions.css';
+import '../styles/Missions.css';
+
+
 
 function Missions() {
   const [missionsData, setMissionData] = useState([]);

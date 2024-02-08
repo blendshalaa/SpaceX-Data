@@ -1,0 +1,65 @@
+.unique-profile-container {
+  margin-top: 100px;
+  background-color: #f0f0f0;
+  padding: 20px;
+  font-family: 'Roboto Mono', monospace;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  flex-wrap: wrap; 
+}
+
+.unique-box {
+  background-color: #fff;
+  margin-right: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  max-width: 400px;
+  padding: 10px;
+  width: 400px;
+  transition: transform 0.3s ease;
+  /* Center align text */
+  text-align: center;
+}
+
+.unique-box:hover {
+  transform: translateY(-5px);
+}
+
+.unique-heading {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.unique-rocket {
+  padding: 10px;
+  margin: 5px 0;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.unique-rocket:hover {
+  background-color: #eaeaea;
+}
+
+.unique-no-rockets {
+  color: #999;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 20px 0;
+  text-align: center;
+}
+
+.unique-box:hover .unique-heading {
+  color: #ff5733;
+}
+
+.unique-box:hover .unique-rocket {
+  background-color: #f2f2f2;
+}

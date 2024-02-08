@@ -8,6 +8,7 @@ export default function RocketCard({ item, onClickButton }) {
   return (
     <div key={item.rocket_id} className="rocket-item">
       <div className="rocket-card-name">
+
         <h2 className="rocket-name">{item.rocket_name}</h2>
       </div>
 

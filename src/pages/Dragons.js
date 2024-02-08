@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import '../styles/dragons.css';
 import { fetchDragons } from '../services/dragonsServices';
 import {
   setDragons,
@@ -37,12 +38,10 @@ function Dragons() {
   }
 
   return (
-    <div>
-      <h1>Dragons</h1>
+    <div className="dragons-container">
       {dragonsData.map((item) => (
-        <div key={item.id}>
-          <p>ID: {item.id}</p>
-          <h2>Dragon name: {item.name}</h2>
+        <div key={item.id} className={`dragon-box ${item.reserved ? 'reserved' : ''}`}>
+          <h2>{item.name}</h2>
           {item.type && <p>Type: {item.type}</p>}
           {item.flickr_images.length > 0 && (
             <img src={item.flickr_images[0]} alt={item.name} className="dragon-image" />

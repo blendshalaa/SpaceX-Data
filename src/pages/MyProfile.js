@@ -1,19 +1,23 @@
 import { useSelector } from "react-redux";
 import "../styles/myprofile.css";
 import { useEffect } from "react";
-import { fetchMission } from "../services/missionsServices"; // Import the fetchMission function
-// import "../styles/my-profile.css";
+import { fetchMission } from "../services/missionsServices";
+import { fetchDragons } from "../services/dragonsServices";
 
 const UniqueProfile = () => {
   const rockets = useSelector((state) => state.rockets);
-  const missions = useSelector((state) => state.missions.missions); // Add selector for missions
+  const missions = useSelector((state) => state.missions.missions);
+  const dragons = useSelector((state) => state.dragons);
   const reservedRockets = rockets.filter((rocket) => rocket.reserved);
 
   useEffect(() => {
-    fetchMission(); // Fetch missions data when component mounts
+    fetchMission();
   }, []);
 
-  // Filter joined missions
+  useEffect(() => {
+    fetchDragons();
+  }, []);
+
   const joinedMissions = missions.filter((mission) => mission.reserved);
 
   return (
@@ -43,7 +47,7 @@ const UniqueProfile = () => {
         <div className="unique-box-top unique-item"></div>
         <div className="unique-box-middle unique-item">
           <div className="unique-box-content unique-item">
-            <h2 className="unique-heading unique-item">JOINED MISSIONS 🚀</h2>
+            <h2 className="unique-heading unique-item">JOINED MISSIONS 🎯</h2>
             <div className="unique-rocket-container unique-item">
               {joinedMissions.length !== 0 ? (
                 joinedMissions.map((mission) => (
@@ -60,6 +64,26 @@ const UniqueProfile = () => {
         <div className="unique-box-bottom unique-item"></div>
       </div>
 
+      <div className="dragons unique-box unique-item">
+        <div className="unique-box-top unique-item"></div>
+        <div className="unique-box-middle unique-item">
+          <div className="unique-box-content unique-item">
+            <h2 className="unique-heading unique-item">YOUR DRAGONS 🐉</h2>
+            <div className="unique-dragon-container unique-item">
+              {dragons.length !== 0 ? (
+                dragons.map((dragon) => (
+                  <div className="unique-dragon unique-item" key={dragon.id}>
+                    {dragon.name}
+                  </div>
+                ))
+              ) : (
+                <p className="unique-no-dragons unique-item"> No dragons reserved!</p>
+              )}
+            </div>
+          </div>
+        </div>
+        <div className="unique-box-bottom unique-item"></div>
+      </div>
     </div>
   );
 };

@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import "../styles/dragons.css";
 
 export default function DragonCard({ item, onClickButton }) {
-  const [reserved, setReserved] = useState(item.reserved);
+  const [reserved, setReserved] = useState(false);
+
 
   const toggleReservation = () => {
     setReserved(!reserved);
@@ -23,12 +24,12 @@ export default function DragonCard({ item, onClickButton }) {
 
       {item.description && (
         <div className="dragon-description-container">
-          <p className="dragon-description">Description: {item.description}</p>
+          <p className="dragon-description">{item.description}</p>
         </div>
       )}
 
       <div className="reservation-button-container">
-        {reserved && <p className="reserved-text">R E S E R V E D</p>}
+        {reserved && <p className="reserved-paragraph">🚀 R E S E R V E D 🚀</p>}
         <button className="reservation-button" onClick={toggleReservation}>
           {reserved ? "Cancel Dragon" : "Reserve Dragon"}
         </button>

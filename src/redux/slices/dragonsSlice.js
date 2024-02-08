@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, produce } from '@reduxjs/toolkit';
 
 const initialState = [];
 
@@ -11,16 +11,16 @@ const dragonsSlice = createSlice({
     },
     reserveDragon: (state, action) => {
       const { id } = action.payload;
-      const dragon = state.find((item) => item.id === id);
-      if (dragon) {
-        dragon.reserved = true;
+      const index = state.findIndex((item) => item.id === id);
+      if (index !== -1) {
+        state[index].reserved = true;
       }
     },
     cancelDragonReservation: (state, action) => {
       const { id } = action.payload;
-      const dragon = state.find((item) => item.id === id);
-      if (dragon) {
-        dragon.reserved = false;
+      const index = state.findIndex((item) => item.id === id);
+      if (index !== -1) {
+        state[index].reserved = false;
       }
     },
   },

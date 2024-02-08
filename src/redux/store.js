@@ -7,7 +7,7 @@ const store = configureStore({
   reducer: {
     rockets: rocketSlice,
     missions: missionsSlice,
-    // Add other reducers if needed
+
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(logger),

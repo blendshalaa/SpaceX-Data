@@ -38,15 +38,29 @@ const UniqueProfile = () => {
         </div>
         <div className="unique-box-bottom"></div>
       </div>
-      <div className="missions">
-        <h2>Joined Missions 🚀</h2>
-        {joinedMissions.map((mission) => (
-          <div key={mission.mission_id} className="mission-card">
-            <h3>{mission.mission_name}</h3>
-            <p>{mission.description}</p>
+
+
+      <div className="missions unique-box">
+        <div className="unique-box-top"></div>
+        <div className="unique-box-middle">
+          <div className="unique-box-content">
+            <h2 className="unique-heading">Joined Missions 🚀</h2>
+            <div className="unique-rocket-container">
+              {joinedMissions.length !== 0 ? (
+                joinedMissions.map((mission) => (
+                  <div className="unique-rocket mission-card" key={mission.mission_id}>
+                    <h3>{mission.mission_name}</h3>
+                  </div>
+                ))
+              ) : (
+                <p className="unique-no-rockets"> No missions joined!</p>
+              )}
+            </div>
           </div>
-        ))}
+        </div>
+        <div className="unique-box-bottom"></div>
       </div>
+
     </div>
   );
 };

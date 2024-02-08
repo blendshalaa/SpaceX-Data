@@ -10,6 +10,30 @@
     background-color: rgb(255, 255, 255); 
     z-index: 1100; 
   }
+
+  .nav-link {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-right: 10px;
+  color: #7f92a7;
+  text-decoration: none;
+  
+}
+
+
+.active-link {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+.active-link {
+  text-decoration: underline;
+  font-weight: bold;
+}z
   
   .navbar li {
     margin-right: 10px;

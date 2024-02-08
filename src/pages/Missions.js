@@ -1,21 +1,25 @@
-import { useEffect, useState } from "react";
-import missionsServices from "../services/missionsServices";
-import "../styles/missions.css";
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchMissionsData, joinMission, leaveMission } from '../components/missionsActions';
+import { selectMissions } from '../redux/slices/missionsSlice';
+import '../styles/missions.css';
+import MissionCard from '../components/MissionCard';
 
 function Missions() {
-  const [missionsData, setMissionData] = useState([]);
+  const dispatch = useDispatch();
+  const missionsData = useSelector(selectMissions);
 
-  const fetchMission = async () => {
-    try {
-      const response = await missionsServices.fetchMission();
-      setMissionData(response.data);
-    } catch (error) {
-      console.error(error);
+  useEffect(() => {
+    dispatch(fetchMissionsData());
+  }, [dispatch]);
+
+  const handleJoinLeave = (missionId, isReserved) => {
+    if (isReserved) {
+      dispatch(leaveMission(missionId));
+    } else {
+      dispatch(joinMission(missionId));
     }
   };
-  useEffect(() => {
-    fetchMission();
-  }, []);
 
   return (
     <div className="missions-container">
@@ -36,9 +40,11 @@ function Missions() {
               <td>{item.mission_name}</td>
               <td>{item.description}</td>
               <td>
-                <button>Join/Leave</button>
+                <button onClick={() => handleJoinLeave(item.mission_id, item.reserved)}>
+                  {item.reserved ? 'Leave' : 'Join'}
+                </button>
               </td>
-              <td>{item.member}</td>
+              <td>{item.reserved ? 'Active Member' : 'Not a Member'}</td>
             </tr>
           ))}
         </tbody>

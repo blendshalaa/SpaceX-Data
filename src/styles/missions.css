@@ -1,6 +1,7 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 
   .missions-container {
+    font-family: 'Roboto Mono', monospace;
     margin-top: 100px;
     padding: 20px;
     background-color: rgba(255, 255, 255, 0.8); 
@@ -23,6 +24,8 @@
 
   
 body {
+  padding: 20px;
+  font-family: 'Roboto Mono', monospace;
   background: linear-gradient(45deg, #b0b6b6, #8784a5);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;

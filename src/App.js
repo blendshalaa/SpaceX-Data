@@ -1,10 +1,10 @@
 import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 import RocketPage from "./pages/Rocket";
-import NotFound from "./pages/NotFound";
 import Dragons from "./pages/Dragons";
 import Missions from "./pages/Missions";
 import MyProfile from "./pages/MyProfile";
 import Navbar from "./components/Navbar";
+import './styles/app.css'
 
 const Layout = () => {
   return (

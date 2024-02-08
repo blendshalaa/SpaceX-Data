@@ -18,47 +18,46 @@ const UniqueProfile = () => {
 
   return (
     <div className="unique-profile-container">
-      <div className="unique-box">
-        <div className="unique-box-top"></div>
-        <div className="unique-box-middle">
-          <div className="unique-box-content">
-            <h2 className="unique-heading">YOUR RESERVED ROCKETS</h2>
-            <div className="unique-rocket-container">
+      <div className="unique-box unique-item">
+        <div className="unique-box-top unique-item"></div>
+        <div className="unique-box-middle unique-item">
+          <div className="unique-box-content unique-item">
+            <h2 className="unique-heading unique-item">YOUR RESERVED ROCKETS 🚀</h2>
+            <div className="unique-rocket-container unique-item">
               {reservedRockets.length !== 0 ? (
                 reservedRockets.map((rocket) => (
-                  <div className="unique-rocket" key={rocket.id}>
+                  <div className="unique-rocket unique-item" key={rocket.id}>
                     {rocket.rocket_name}
                   </div>
                 ))
               ) : (
-                <p className="unique-no-rockets"> No rockets reserved!</p>
+                <p className="unique-no-rockets unique-item"> No rockets reserved!</p>
               )}
             </div>
           </div>
         </div>
-        <div className="unique-box-bottom"></div>
+        <div className="unique-box-bottom unique-item"></div>
       </div>
 
-
-      <div className="missions unique-box">
-        <div className="unique-box-top"></div>
-        <div className="unique-box-middle">
-          <div className="unique-box-content">
-            <h2 className="unique-heading">Joined Missions 🚀</h2>
-            <div className="unique-rocket-container">
+      <div className="missions unique-box unique-item">
+        <div className="unique-box-top unique-item"></div>
+        <div className="unique-box-middle unique-item">
+          <div className="unique-box-content unique-item">
+            <h2 className="unique-heading unique-item">JOINED MISSIONS 🚀</h2>
+            <div className="unique-rocket-container unique-item">
               {joinedMissions.length !== 0 ? (
                 joinedMissions.map((mission) => (
-                  <div className="unique-rocket mission-card" key={mission.mission_id}>
+                  <div className="unique-rocket mission-card unique-item" key={mission.mission_id}>
                     <h3>{mission.mission_name}</h3>
                   </div>
                 ))
               ) : (
-                <p className="unique-no-rockets"> No missions joined!</p>
+                <p className="unique-no-rockets unique-item"> No missions joined!</p>
               )}
             </div>
           </div>
         </div>
-        <div className="unique-box-bottom"></div>
+        <div className="unique-box-bottom unique-item"></div>
       </div>
 
     </div>

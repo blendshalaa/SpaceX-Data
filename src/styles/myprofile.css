@@ -1,74 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
 .unique-profile-container {
-  width: 100%;
+  margin-top: 100px;
+  background-color: #f0f0f0;
+  padding: 20px;
+  font-family: 'Roboto Mono', monospace;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  justify-content: center; 
+  flex-wrap: wrap; 
 }
 
 .unique-box {
-  width: 300px;
-  height: 400px;
-  position: relative;
-  background: linear-gradient(135deg, #e6cc9a, #b09fa0);
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-}
-
-.unique-box-top{
-  width: 100%;
-  height: 40px;
-  background-color: rgb(153, 92, 92);
-}
-
-.unique-box-middle {
-  flex: 1;
   background-color: #fff;
-  padding: 20px;
-  overflow: auto;
+  margin-right: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  max-width: 400px;
+  padding: 10px;
+  transition: transform 0.3s ease;
 }
 
-.unique-box-content {
-  padding: 20px;
+.unique-box:hover {
+  transform: translateY(-5px);
 }
 
 .unique-heading {
-  margin-bottom: 20px;
-  text-align: center;
   color: #333;
-}
-
-.unique-rocket-container {
-  display: flex;
-  flex-direction: column;
+  margin-bottom: 10px;
 }
 
 .unique-rocket {
-  font-size: 18px;
-  margin-bottom: 10px;
-  border-radius: 10px;
-  border-bottom: 1px solid #ccc;
   padding: 10px;
-  background-color: #ce9696;
-  transition: all 0.3s ease;
+  margin: 5px 0;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .unique-rocket:hover {
-  transform: scale(1.1);
-  background-color: #f5f5f5;
+  background-color: #eaeaea;
 }
 
 .unique-no-rockets {
-
-  font-size: 18px;
-  font-weight: bold;
-  color: #333; 
-  transition: color 0.3s ease; 
+  color: #999;
 }
 
-.unique-no-rockets:hover {
-  text-align: center;
-  color: #ff5733; 
+hr {
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 20px 0;
+}
 
+.unique-box:hover .unique-heading {
+  color: #ff5733;
+}
+
+.unique-box:hover .unique-rocket {
+  background-color: #f2f2f2;
 }

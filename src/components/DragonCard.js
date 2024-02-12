@@ -31,7 +31,7 @@ export default function DragonCard({ item, onClickButton }) {
       <div className="reservation-button-container">
         {reserved && <p className="reserved-paragraph">🚀 R E S E R V E D 🚀</p>}
         <button className="reservation-button" onClick={toggleReservation}>
-          {reserved ? "Cancel Dragon" : "Reserve Dragon"}
+          {item.reserved ? "Cancel Dragon" : "Reserve Dragon"}
         </button>
       </div>
     </div>

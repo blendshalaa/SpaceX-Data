@@ -9,7 +9,10 @@ export const missionSlice = createSlice({
     initialState,
     reducers: {
         setMissions: (state, action) => {
-            state.missions = action.payload;
+            state.missions = action.payload.map(mission => ({
+                ...mission,
+                reserved: state.missions.find(findedMission => findedMission.mission_id === mission.mission_id)?.reserved || false,
+            }))
         },
         joinMissionAction: (state, action) => {
             const missionId = action.payload;

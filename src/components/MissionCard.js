@@ -15,6 +15,8 @@ export default function MissionCard({ mission }) {
         }
     };
 
+    const buttonClassName = mission.reserved ? "reservation-button leave-button" : "reservation-button join-button";
+
     return (
         <div key={mission.mission_id} className="mission-item">
             <h2 className="mission-name">{mission.mission_name}</h2>
@@ -22,10 +24,11 @@ export default function MissionCard({ mission }) {
                 {mission.reserved ? "Mission Reserved" : "Mission Available"}
             </p>
             <p className="mission-description">{mission.description}</p>
-            <button className="reservation-button" onClick={handleJoinLeave}>
+            <button className={buttonClassName} onClick={handleJoinLeave}>
                 {mission.reserved ? "Leave Mission" : "Join Mission"}
             </button>
         </div>
     );
 }
+
 

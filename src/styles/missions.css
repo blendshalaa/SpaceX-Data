@@ -84,6 +84,10 @@ body {
 }
 
 .missions-table button:hover {
-  background-color: #0e1445;
+  background-color: #30a183;
   transform: scale(1.05);
+}
+
+.reservation-button:hover {
+  background-color: #8ba946;
 }

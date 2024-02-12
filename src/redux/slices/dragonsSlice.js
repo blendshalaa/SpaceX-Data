@@ -1,4 +1,4 @@
-import { createSlice, produce } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = [];
 
@@ -7,20 +7,23 @@ const dragonsSlice = createSlice({
   initialState,
   reducers: {
     setDragons: (state, action) => {
-      return action.payload;
+      return action.payload.map((dragon) => ({
+        ...dragon,
+        reserved: state.find((theDragon) => theDragon.id === dragon.id)?.reserved || false
+      }))
     },
     reserveDragon: (state, action) => {
       const { id } = action.payload;
-      const index = state.findIndex((item) => item.id === id);
-      if (index !== -1) {
-        state[index].reserved = true;
+      const dragonToUpdate = state.find((dragon) => dragon.id === id);
+      if (dragonToUpdate) {
+        dragonToUpdate.reserved = true;
       }
     },
     cancelDragonReservation: (state, action) => {
       const { id } = action.payload;
-      const index = state.findIndex((item) => item.id === id);
-      if (index !== -1) {
-        state[index].reserved = false;
+      const dragonToUpdate = state.find((dragon) => dragon.id === id);
+      if (dragonToUpdate) {
+        dragonToUpdate.reserved = false;
       }
     },
   },
